@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Routine Table</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+        text-align: center !important     ;
+      }
+      table thead tr th {
+        background: #e7e7e7 !important;
+        color: #000000 !important;
+      }
+      table tbody tr td {
+        transition: linear 0.3s;
+      }
+      table tbody tr td:hover {
+        background: #3d405b;
+        color: white;
+      }
+      /* table tbody tr td:nth-child(1) {
+        color: red;
+        font-weight: 700;
+      } */
+      table tbody tr td p {
+        font-weight: bold;
+        color: #34db8d;
+      }
+      table tbody tr td.active {
+        background: #3d405b;
+        color: white;
+      }
+      .credit {
+        position: absolute;
+        right: 5px;
+        font-size: 10px;
+        bottom: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h2 class="m-0">Dhaka International University</h2>
+          <h3 class="m-0">Department of CSE (2<sup>nd</sup> Shift)</h3>
+          <h4 class="m-0">Semester-1<sup>st</sup> (Fall-2023)</h4>
+          <h5 class="m-0">Batch-E-105<sup>th</sup>(P)</h5>
+          <div class="d-flex justify-content-between">
+            <h6 class="m-0">Class Routine</h6>
+            <p class="m-0">Room No 602</p>
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered col-md-12">
+        <thead>
+          <tr>
+            <th class="align-top " style="width: 120px;">Time & Day</th>
+            <th class="align-top">08:00-09:40 (AM)</th>
+            <th class="align-top">09:40-11:20 (AM)</th>
+            <th class="align-top">11:20-01:00 (PM)</th>
+            <th class="align-top">02:00-03:40 (PM)</th>
+            <th class="align-top">03:40-04:30 (PM)</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td class="align-middle">Friday</td>
+            <td id="f1">
+              Linear Algebra and Coordinate Geometry
+              <br />
+              <p>Topu Rayhan</p>
+            </td>
+            <td id="f2">
+              Communicative English
+              <br />
+              <p>Mainul Islam</p>
+            </td>
+            <td id="f3">
+              Structured Programming Languages
+              <br />
+              <p>Sumon Miah</p>
+            </td>
+            <td id="f4">
+              Engineering Drawing (Lab)
+              <br />
+              <p>Sayma Sultana</p>
+            </td>
+            <td id="f5">
+              Physics
+              <br />
+              <p>Sayma Mahzabin</p>
+            </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="2">#</th>
+            <th class="align-top">06:00-06:50 (PM)</th>
+            <th class="align-top">06:50-07:40 (PM)</th>
+            <th class="align-top">07:40-08:30 (PM)</th>
+            <th class="align-top">08:30-09:20 (PM)</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td class="align-middle" colspan="2">Sunday</td>
+            <td>
+              Communicative English
+              <br />
+              <p>Mainul Islam</p>
+            </td>
+
+            <td>
+              linear Algebra and Coordinate Geometry
+              <br />
+              <p>Topu Rayhan</p>
+            </td>
+            <td>
+              Structured Programming Languages
+              <br />
+              <p>Sumon Miah</p>
+            </td>
+            <td>
+              Engineering Economics
+              <br />
+              <p>Sangida Afroze</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="align-middle">Tuesday</td>
+            <td colspan="2">
+              Engineering Economics
+              <br />
+              <p>Sangida Afroze</p>
+            </td>
+            <td colspan="2">
+              Physics
+              <br />
+              <p>Sayma Mahzabin</p>
+            </td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="2">#</th>
+            <th colspan="2">06:00-07:40 (PM)</th>
+            <th colspan="2">07:40-9:20 (PM)</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td class="align-middle" colspan="2">Wednesday</td>
+
+            <td colspan="2">
+              Structured Programming Languages (Lab)
+              <br />
+              <p>Sumon Miah</p>
+            </td>
+            <td colspan="2">
+              Physics (Lab)
+              <br />
+              <p>Sayma Mahzabin</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="credit">
+      This Routine made by
+      <a href="facebook.com/shakhawat.hosen.99">Shakhawat Hosen</a>
+    </p>
+    <script>
+      // const currentDate = new Date();
+      // const currentDayIndex = currentDate.getDay();
+      // const daysOfWeek = [
+      //   "Sunday",
+      //   "Monday",
+      //   "Tuesday",
+      //   "Wednesday",
+      //   "Thursday",
+      //   "Friday",
+      //   "Saturday"
+      // ];
+      // const currentDay = daysOfWeek[currentDayIndex];
+      // let currentHour = currentDate.getHours();
+      // const currentMinute = currentDate.getMinutes();
+      // let period = "AM";
+      // if (currentHour >= 12) {
+      //   period = "PM";
+      //   if (currentHour > 12) {
+      //     currentHour -= 12;
+      //   }
+      // }
+
+      // console.log("Hour : " + currentHour);
+      // console.log("Minute : " + currentMinute);
+      // console.log("Period : " + period);
+      // console.log("day : " + currentDay);
+
+      // if (currentDay == "Friday") {
+      //   if (period == "AM") {
+      //     if (currentHour == 9 && currentMinute <= 40) {
+      //       const element = document.getElementById("f1");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 8) {
+      //       const element = document.getElementById("f1");
+      //       element.classList.add("active");
+      //     }
+
+      //     if (currentHour == 9 && currentMinute >= 41) {
+      //       const element = document.getElementById("f2");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 11 && currentMinute <= 20) {
+      //       const element = document.getElementById("f2");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 11 && currentMinute >= 21) {
+      //       const element = document.getElementById("f3");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 1 && currentMinute <= 00) {
+      //       const element = document.getElementById("f3");
+      //       element.classList.add("active");
+      //     }
+
+      //     if (currentHour == 2 && currentMinute >= 01) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 3 && currentMinute <= 40) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 3 && currentMinute >= 41) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 4 && currentMinute <= 30) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //   }
+      //   if (period == "PM") {
+      //     if (currentHour == 9 && currentMinute <= 40) {
+      //       const element = document.getElementById("f1");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 8) {
+      //       const element = document.getElementById("f1");
+      //       element.classList.add("active");
+      //     }
+
+      //     if (currentHour == 9 && currentMinute >= 41) {
+      //       const element = document.getElementById("f2");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 11 && currentMinute <= 20) {
+      //       const element = document.getElementById("f2");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 11 && currentMinute >= 21) {
+      //       const element = document.getElementById("f3");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 1 && currentMinute <= 00) {
+      //       const element = document.getElementById("f3");
+      //       element.classList.add("active");
+      //     }
+
+      //     if (currentHour == 2 && currentMinute >= 01) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 3 && currentMinute <= 40) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 3 && currentMinute >= 41) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //     if (currentHour == 4 && currentMinute <= 30) {
+      //       const element = document.getElementById("f4");
+      //       element.classList.add("active");
+      //     }
+      //   }
+      // }
+    </script>
+  </body>
+</html>
