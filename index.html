@@ -17,6 +17,8 @@
       * {
         font-family: "Roboto", sans-serif;
         text-align: center !important     ;
+        margin: 0;
+        padding: 0;
       }
       table thead tr th {
         background: #e7e7e7 !important;
@@ -29,10 +31,6 @@
         background: #3d405b;
         color: white;
       }
-      /* table tbody tr td:nth-child(1) {
-        color: red;
-        font-weight: 700;
-      } */
       table tbody tr td p {
         font-weight: bold;
         color: #34db8d;
@@ -41,12 +39,108 @@
         background: #3d405b;
         color: white;
       }
-      .credit {
-        position: absolute;
-        right: 5px;
-        font-size: 10px;
-        bottom: 1px;
+      .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
       }
+      .offline {
+        background: #d30000;
+      }
+      .online {
+        background: #169459;
+      }
+      /* Animation start */
+
+      .active {
+        position: relative;
+        color: #1640f0;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .active:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        width: 50%;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .active span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #07f513, #07f513);
+        animation: animatel 3s linear infinite;
+      }
+      @keyframes animatel {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      .active span:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, #07f513, #07f513);
+        animation: animate2 3s linear infinite;
+        animation-delay: 3s;
+      }
+      @keyframes animate2 {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+      .active span:nth-child(3) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to left, #07f513, #07f513);
+        animation: animate3 3s linear infinite;
+      }
+      @keyframes animate3 {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .active span:nth-child(4) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to top, #07f513, #07f513);
+        animation: animate4 3s linear infinite;
+        animation-delay: 3s;
+      }
+      @keyframes animate4 {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(-100%);
+        }
+      }
+
+      /* Animation End */
     </style>
   </head>
   <body>
@@ -63,7 +157,7 @@
           </div>
         </div>
       </div>
-      <table class="table table-bordered col-md-12">
+      <table class="table mb-2 table-bordered col-md-12">
         <thead>
           <tr>
             <th class="align-top " style="width: 120px;">Time & Day</th>
@@ -76,28 +170,50 @@
         </thead>
         <tbody class="text-center">
           <tr>
-            <td class="align-middle">Friday</td>
+            <td class="align-middle">
+              Friday <span class="dot offline"></span>
+            </td>
             <td id="f1">
+              <span class="top"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              <span class="left"></span>
               Linear Algebra and Coordinate Geometry
               <br />
               <p>Topu Rayhan</p>
             </td>
             <td id="f2">
+              <span class="top"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              <span class="left"></span>
               Communicative English
               <br />
               <p>Mainul Islam</p>
             </td>
             <td id="f3">
+              <span class="top"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              <span class="left"></span>
               Structured Programming Languages
               <br />
               <p>Sumon Miah</p>
             </td>
             <td id="f4">
+              <span class="top"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              <span class="left"></span>
               Engineering Drawing (Lab)
               <br />
               <p>Sayma Sultana</p>
             </td>
             <td id="f5">
+              <span class="top"></span>
+              <span class="right"></span>
+              <span class="bottom"></span>
+              <span class="left"></span>
               Physics
               <br />
               <p>Sayma Mahzabin</p>
@@ -106,7 +222,7 @@
         </tbody>
         <thead>
           <tr>
-            <th colspan="2">#</th>
+            <th colspan="2"><=:❤:=></th>
             <th class="align-top">06:00-06:50 (PM)</th>
             <th class="align-top">06:50-07:40 (PM)</th>
             <th class="align-top">07:40-08:30 (PM)</th>
@@ -114,38 +230,40 @@
           </tr>
         </thead>
         <tbody class="text-center">
-          <tr>
+          <!-- <tr>
             <td class="align-middle" colspan="2">Sunday</td>
-            <td>
+            <td id="s1">
               Communicative English
               <br />
               <p>Mainul Islam</p>
             </td>
 
-            <td>
+            <td id="s2">
               linear Algebra and Coordinate Geometry
               <br />
               <p>Topu Rayhan</p>
             </td>
-            <td>
+            <td id="s3">
               Structured Programming Languages
               <br />
               <p>Sumon Miah</p>
             </td>
-            <td>
+            <td id="s4">
               Engineering Economics
               <br />
               <p>Sanjida Afroze</p>
             </td>
-          </tr>
+          </tr> -->
           <tr>
-            <td colspan="2" class="align-middle">Tuesday</td>
-            <td colspan="2">
+            <td colspan="2" class="align-middle">
+              Tuesday <span class="dot online"></span>
+            </td>
+            <td id="t1" colspan="2">
               Engineering Economics
               <br />
               <p>Sanjida Afroze</p>
             </td>
-            <td colspan="2">
+            <td id="t2" colspan="2">
               Physics
               <br />
               <p>Sayma Mahzabin</p>
@@ -154,21 +272,23 @@
         </tbody>
         <thead>
           <tr>
-            <th colspan="2">#</th>
+            <th colspan="2"><=:❤:=></th>
             <th colspan="2">06:00-07:40 (PM)</th>
             <th colspan="2">07:40-9:20 (PM)</th>
           </tr>
         </thead>
         <tbody class="text-center">
           <tr>
-            <td class="align-middle" colspan="2">Wednesday</td>
+            <td class="align-middle" colspan="2">
+              Wednesday <span class="dot offline"></span>
+            </td>
 
-            <td colspan="2">
+            <td id="w1" colspan="2">
               Structured Programming Languages (Lab)
               <br />
               <p>Sumon Miah</p>
             </td>
-            <td colspan="2">
+            <td id="w2" colspan="2">
               Physics (Lab)
               <br />
               <p>Sayma Mahzabin</p>
@@ -177,128 +297,218 @@
         </tbody>
       </table>
     </div>
-    <p class="credit">
-      This Routine made by
-      <a href="facebook.com/shakhawat.hosen.99">Shakhawat Hosen</a>
-    </p>
+    <style>
+      .status {
+        align-items: center;
+      }
+      .status p {
+        margin-right: 10px;
+        font-size: 10px;
+      }
+      .status p span.dot {
+        width: 5px;
+        height: 5px;
+      }
+      .credit {
+        font-size: 10px;
+      }
+    </style>
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="status d-flex">
+          <p><span class="dot online"></span> Online Class</p>
+          <p><span class="dot offline"></span> Offline Class</p>
+        </div>
+        <p class="credit">
+          This Routine made by
+          <a href="facebook.com/shakhawat.hosen.99">Shakhawat Hosen</a>
+        </p>
+      </div>
+    </div>
     <script>
-      // const currentDate = new Date();
-      // const currentDayIndex = currentDate.getDay();
-      // const daysOfWeek = [
-      //   "Sunday",
-      //   "Monday",
-      //   "Tuesday",
-      //   "Wednesday",
-      //   "Thursday",
-      //   "Friday",
-      //   "Saturday"
-      // ];
-      // const currentDay = daysOfWeek[currentDayIndex];
-      // let currentHour = currentDate.getHours();
-      // const currentMinute = currentDate.getMinutes();
-      // let period = "AM";
-      // if (currentHour >= 12) {
-      //   period = "PM";
-      //   if (currentHour > 12) {
-      //     currentHour -= 12;
-      //   }
-      // }
+      const currentDate = new Date();
+      const currentDayIndex = currentDate.getDay();
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
+      const currentDay = daysOfWeek[currentDayIndex];
+      let currentHour = currentDate.getHours();
+      const currentMinute = currentDate.getMinutes();
+      let period = "AM";
+      if (currentHour >= 12) {
+        period = "PM";
+        if (currentHour > 12) {
+          currentHour -= 12;
+        }
+      }
 
-      // console.log("Hour : " + currentHour);
-      // console.log("Minute : " + currentMinute);
-      // console.log("Period : " + period);
-      // console.log("day : " + currentDay);
+      console.log("Hour : " + currentHour);
+      console.log("Minute : " + currentMinute);
+      console.log("Period : " + period);
+      console.log("day : " + currentDay);
 
-      // if (currentDay == "Friday") {
-      //   if (period == "AM") {
-      //     if (currentHour == 9 && currentMinute <= 40) {
-      //       const element = document.getElementById("f1");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 8) {
-      //       const element = document.getElementById("f1");
-      //       element.classList.add("active");
-      //     }
+      if (currentDay == "Friday") {
+        if (period == "AM") {
+          // class 1 start
+          if (currentHour == 9 && currentMinute <= 40) {
+            const element = document.getElementById("f1");
+            element.classList.add("active");
+          }
+          if (currentHour == 8) {
+            const element = document.getElementById("f1");
+            element.classList.add("active");
+          }
+          // class 1 end
+          // class 2 start
+          if (currentHour == 9 && currentMinute >= 41) {
+            const element = document.getElementById("f2");
+            element.classList.add("active");
+          }
+          if (currentHour == 11 && currentMinute <= 20) {
+            const element = document.getElementById("f2");
+            element.classList.add("active");
+          }
+          // class 2 end
+          //class 3 start
+          if (currentHour == 11 && currentMinute >= 21) {
+            const element = document.getElementById("f3");
+            element.classList.add("active");
+          }
+          // class 3 end
+        }
+        if (period == "PM") {
+          // class 3 start
+          if (currentHour == 12 && currentMinute >= 00) {
+            const element = document.getElementById("f3");
+            element.classList.add("active");
+          }
+          if (currentHour == 1 && currentMinute <= 00) {
+            const element = document.getElementById("f3");
+            element.classList.add("active");
+          }
+          // class 3 end
+          // class 4 start
+          if (currentHour == 2 && currentMinute >= 00) {
+            const element = document.getElementById("f4");
+            element.classList.add("active");
+          }
 
-      //     if (currentHour == 9 && currentMinute >= 41) {
-      //       const element = document.getElementById("f2");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 11 && currentMinute <= 20) {
-      //       const element = document.getElementById("f2");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 11 && currentMinute >= 21) {
-      //       const element = document.getElementById("f3");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 1 && currentMinute <= 00) {
-      //       const element = document.getElementById("f3");
-      //       element.classList.add("active");
-      //     }
+          if (currentHour == 3 && currentMinute <= 40) {
+            const element = document.getElementById("f4");
+            element.classList.add("active");
+          }
+          // class 4 end
+          // class 5 start
+          if (currentHour == 3 && currentMinute >= 41) {
+            const element = document.getElementById("f5");
+            element.classList.add("active");
+          }
+          if (currentHour == 4 && currentMinute <= 30) {
+            const element = document.getElementById("f5");
+            element.classList.add("active");
+          }
+        }
+      }
+      if (currentDay == "Sunday") {
+        if (period == "PM") {
+          // class 1 start
+          if (currentHour == 6 && currentMinute >= 00) {
+            const element = document.getElementById("s1");
+            element.classList.add("active");
+          }
+          if (currentHour == 6 && currentMinute <= 50) {
+            const element = document.getElementById("s1");
+            element.classList.add("active");
+          }
+          // class 1 end
+          // class 2 start
+          if (currentHour == 6 && currentMinute >= 51) {
+            const element = document.getElementById("s2");
+            element.classList.add("active");
+          }
 
-      //     if (currentHour == 2 && currentMinute >= 01) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 3 && currentMinute <= 40) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 3 && currentMinute >= 41) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 4 && currentMinute <= 30) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //   }
-      //   if (period == "PM") {
-      //     if (currentHour == 9 && currentMinute <= 40) {
-      //       const element = document.getElementById("f1");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 8) {
-      //       const element = document.getElementById("f1");
-      //       element.classList.add("active");
-      //     }
+          if (currentHour == 7 && currentMinute <= 40) {
+            const element = document.getElementById("s2");
+            element.classList.add("active");
+          }
+          // class 2 end
+          // class 3 start
+          if (currentHour == 7 && currentMinute >= 41) {
+            const element = document.getElementById("s3");
+            element.classList.add("active");
+          }
+          if (currentHour == 8 && currentMinute <= 30) {
+            const element = document.getElementById("s3");
+            element.classList.add("active");
+          }
+          // class 3 end
+          // class 4 start
+          if (currentHour == 8 && currentMinute >= 31) {
+            const element = document.getElementById("s4");
+            element.classList.add("active");
+          }
+          if (currentHour == 9 && currentMinute <= 20) {
+            const element = document.getElementById("s4");
+            element.classList.add("active");
+          }
+        }
+      }
+      if (currentDay == "Tuesday") {
+        if (period == "PM") {
+          // class 1 start
+          if (currentHour == 6 && currentMinute >= 00) {
+            const element = document.getElementById("t1");
+            element.classList.add("active");
+          }
+          if (currentHour == 7 && currentMinute <= 40) {
+            const element = document.getElementById("t1");
+            element.classList.add("active");
+          }
+          // class 1 end
+          // class 2 start
+          if (currentHour == 7 && currentMinute >= 41) {
+            const element = document.getElementById("t2");
+            element.classList.add("active");
+          }
 
-      //     if (currentHour == 9 && currentMinute >= 41) {
-      //       const element = document.getElementById("f2");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 11 && currentMinute <= 20) {
-      //       const element = document.getElementById("f2");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 11 && currentMinute >= 21) {
-      //       const element = document.getElementById("f3");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 1 && currentMinute <= 00) {
-      //       const element = document.getElementById("f3");
-      //       element.classList.add("active");
-      //     }
+          if (currentHour == 9 && currentMinute <= 20) {
+            const element = document.getElementById("t2");
+            element.classList.add("active");
+          }
+          // class 2 end
+        }
+      }
+      if (currentDay == "Wednesday") {
+        if (period == "PM") {
+          // class 1 start
+          if (currentHour == 6 && currentMinute >= 00) {
+            const element = document.getElementById("w1");
+            element.classList.add("active");
+          }
+          if (currentHour == 7 && currentMinute <= 40) {
+            const element = document.getElementById("w1");
+            element.classList.add("active");
+          }
+          // class 1 end
+          // class 2 start
+          if (currentHour == 7 && currentMinute >= 41) {
+            const element = document.getElementById("w2");
+            element.classList.add("active");
+          }
 
-      //     if (currentHour == 2 && currentMinute >= 01) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 3 && currentMinute <= 40) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 3 && currentMinute >= 41) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //     if (currentHour == 4 && currentMinute <= 30) {
-      //       const element = document.getElementById("f4");
-      //       element.classList.add("active");
-      //     }
-      //   }
-      // }
+          if (currentHour == 9 && currentMinute <= 20) {
+            const element = document.getElementById("w2");
+            element.classList.add("active");
+          }
+          // class 2 end
+        }
+      }
     </script>
   </body>
 </html>
